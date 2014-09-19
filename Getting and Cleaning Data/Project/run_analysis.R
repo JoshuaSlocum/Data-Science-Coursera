@@ -1,4 +1,4 @@
-# Code requires that the file "run_analysis.R" and the folder "UCI HAR Dataset" are in the working directory. 
+# Code requires that the file "run_analysis.R" and the folder "UCI HAR Dataset" are in the working directory. Requires reshape2 package (Step 5).
 # Output is tidy data set.
 
 # 1. Merge train and test sets.
@@ -55,33 +55,19 @@ temp<-merge(combined.data,activity.names.data,by.x="ActID",by.y="ActID")
 combined.data <- temp[order(temp$Subject),] # assign and reorder by subject
 
 combined.data <- combined.data[c(2,69,3:68)] # reorder columns so subject and activity come first
-row.nameS(combined.data) <- NULL  # remove the row numbers as row names that appeard after the assign step
+row.names(combined.data) <- NULL  # remove the row numbers as row names that appeard after the assign step
 rm(temp)
 
 # 4. Label the data set with descriptive variable names
 #  This step is completed above under 2.a
 
 # 5. Output tidy data set with average of each variable for each activity by subject.
-# That is, for each subject, we calculate and record the mean of each variable by activity. Thus each subject will have 6 averages for a total of 180 rows and 68 columns
+# That is, for each subject, we calculate and record the mean of each variable by activity. Thus each subject will have 6 averages for a total of 180 rows and 68 columns. This step requires the reshape2 package.
 
-# 5.a Create tidy.data frame with subject ID's, Activity Labels, and place holder 0's for averages
-tidy.data <- data.frame(sort(rep(seq(1:30),6)))
-names(tidy.data) <- "Subject"
-tidy.data$Activity_Label <- unique(combined.data$Activity_Label)
-tidy.data <- cbind(tidy.data,matrix(0,nrow=180,ncol=66))
-names(tidy.data)[3:68] <- names(combined.data)[3:68]
+library(reshape2)
+tidy.melt <- melt(combined.data,id=c("Subject","Activity_Label"))
+tidy.cast <- dcast(tidy.melt,Subject + Activity_Label ~ variable, mean)
 
-# 5.b Loop over the combined data and for each subject and each activity, find the mean of the variables and store it in the tidy.data set.
-row <- 1
-for( i in 1:30){
-  for( j in unique(combined.data$Activity_Label)){
-    calc.set <- combined.data[(combined.data$Subject == i & combined.data$Activity_Label==j),]
-    means <- apply(calc.set[,3:68],2,mean)
-    tidy.data[row,3:68] <- means
-    row <- row + 1
-  }
-}
+write.table(tidy.cast,file="TidyData.txt",row.names=FALSE)
 
-# 5.c Output the tidy.data
-write.table(tidy.data,file="TidyData.txt",row.name=FALSE)
 
