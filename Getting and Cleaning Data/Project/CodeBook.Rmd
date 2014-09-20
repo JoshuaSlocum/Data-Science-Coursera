@@ -5,7 +5,7 @@ output:
     keep_md: true
 ---
 
-This information is taken from the *features_info.txt* file in the *UCI HAR Dataset* folder mentioned in the **README**. It does not represent all the information found there, only that which is relevant to the analysis discused in the **README** that is performed by the *run_analysis.R* file.
+This information is taken from the *features_info.txt* file in the *UCI HAR Dataset* folder mentioned in the **README**. It does not represent all the information found there, only that which is relevant to the analysis discussed in the **README** that is performed by the *run_analysis.R* file.
 
 >The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -35,12 +35,12 @@ This information is taken from the *features_info.txt* file in the *UCI HAR Data
 * fBodyGyroMag
 * fBodyGyroJerkMag
 
-While other values were calcualted for the above variables, for our analysis we are concerned only with the `mean()` and `std()` (standard deviation) and so we are only interested in variables with *"-mean()-"* or *"-std()-"* in the name. An example of one is `tBodyAcc-mean()-Z`. The full list is found below. The original values of the variables were normalized to be [-1,1] and so are unitless.
+While other values were calculated for the above variables, for our analysis we are concerned only with the `mean()` and `std()` (standard deviation) and so we are only interested in variables with *"-mean()-"* or *"-std()-"* in the name. An example of one is `tBodyAcc-mean()-Z`. The full list is found below. The original values of the variables were normalized to be [-1,1] and so are unit less.
 
 Within the *TinyData.txt* file the following variables names are used.
 
 1. `Subject`
- + This takes values 1-30 and representes the experiment subject (person).
+ + This takes values 1-30 and represents the experiment subject (person).
 2. `Activity_Label` represents the activity the subject was performing while the data were recorded. It can takes the following values in the *TidyData*:
 
 >1. WALKING
@@ -51,9 +51,9 @@ Within the *TinyData.txt* file the following variables names are used.
 6. LAYING
 
 
-+ Please note that in the original data the activities are coded using the numerical values in the above table. The *run_analsyis.R* file recodes those values using the text values in the above table.
++ Please note that in the original data the activities are coded using the numerical values in the above table. The *run_analsyis.R* file re-codes those values using the text values in the above table.
 
-The other 66 variables represent the by `Subject` by `Activity_Label` means. These are also the orignal names for these variables. The original names are retained since adding "Mean of" would have been tedious and redundant since all values in the tidy data are means and this is also explained in the **README**. Since the original data was normalized to be [-1,1] the means fall within the same range (and also have no units).
+The other 66 variables represent the by `Subject` by `Activity_Label` means. These are also the original names for these variables. The original names are retained since adding "Mean of" would have been tedious and redundant since all values in the tidy data are means and this is also explained in the **README**. Since the original data was normalized to be [-1,1] the means fall within the same range (and also have no units).
 
 3. "tBodyAcc-mean()-X"
 4. "tBodyAcc-mean()-Y"

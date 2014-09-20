@@ -57,18 +57,18 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="introduction" class="section level3">
 <h3>Introduction</h3>
-<p>This analysis assumes that you have already obtained the UCI HAR Dataset and are familiar with the information contained in its assocaited <strong>README</strong> file regarding the format of the study and original data. If you do not have it, you can obtain it <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">here</a>.</p>
+<p>This analysis assumes that you have already obtained the UCI HAR Data set and are familiar with the information contained in its associated <strong>README</strong> file regarding the format of the study and original data. If you do not have it, you can obtain it <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">here</a>.</p>
 </div>
 <div id="conducting-the-analysis" class="section level3">
 <h3>Conducting the Analysis</h3>
-<p>To begin the analysis of the UCI HAR Data, simply run the <em>run_analysis.R</em> file. This file assumes that you have a folder named <em>UCI HAR Dataset</em> in your wokring directory and have not modified the files or file names contained within. It also depends on having the <code>reshape2</code> package installed.</p>
-<p>The analysis we are performing is to find the mean value of several variables for each activity by subject. The results are presented in the <em>TidyData</em> text file where the values are the means. There are 66 variables (means), and 180 observations (30 subjects with 6 activities each). The total size of the dataset is 180x68. Each row is the means of each of the 66 variables for a (Subject,Activity) pair. More details on how the code works can be found in comments in the <em>run_analysis.R</em> file.</p>
+<p>To begin the analysis of the UCI HAR Data, simply run the <em>run_analysis.R</em> file. This file assumes that you have a folder named <em>UCI HAR Dataset</em> in your working directory and have not modified the files or file names contained within. It also depends on having the <code>reshape2</code> package installed.</p>
+<p>The analysis we are performing is to find the mean value of several variables for each activity by subject. The results are presented in the <em>TidyData</em> text file where the values are the means. There are 66 variables (means), and 180 observations (30 subjects with 6 activities each). The total size of the data set is 180x68. Each row is the means of each of the 66 variables for a (Subject,Activity) pair. More details on how the code works can be found in comments in the <em>run_analysis.R</em> file.</p>
 <p>The <em>run_analysis.R</em> file will do the following:</p>
 <ol style="list-style-type: decimal">
-<li>Combine the train and testing data contained in the <em>UCI HAR Dataset</em> folder into one dataset.</li>
+<li>Combine the train and testing data contained in the <em>UCI HAR Dataset</em> folder into one data set.</li>
 </ol>
 <ul>
-<li>There are 6 total data sets that must be comibned; 3 from the <em>test</em> files and 3 from the <em>train</em> files. These files contain the subjects, activity labels, and gyroscpe data.</li>
+<li>There are 6 total data sets that must be combined; 3 from the <em>test</em> files and 3 from the <em>train</em> files. These files contain the subjects, activity labels, and gyroscope data.</li>
 <li>More details can be found in the <em>UCI HAR Dataset</em> <strong>README</strong>.</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">

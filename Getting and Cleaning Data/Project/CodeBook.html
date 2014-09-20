@@ -55,7 +55,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 
-<p>This information is taken from the <em>features_info.txt</em> file in the <em>UCI HAR Dataset</em> folder mentioned in the <strong>README</strong>. It does not represent all the information found there, only that which is relevant to the analysis discused in the <strong>README</strong> that is performed by the <em>run_analysis.R</em> file.</p>
+<p>This information is taken from the <em>features_info.txt</em> file in the <em>UCI HAR Dataset</em> folder mentioned in the <strong>README</strong>. It does not represent all the information found there, only that which is relevant to the analysis discussed in the <strong>README</strong> that is performed by the <em>run_analysis.R</em> file.</p>
 <blockquote>
 <p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix ‘t’ to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.</p>
 </blockquote>
@@ -91,13 +91,13 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>fBodyGyroJerkMag</li>
 </ul>
 </blockquote>
-<p>While other values were calcualted for the above variables, for our analysis we are concerned only with the <code>mean()</code> and <code>std()</code> (standard deviation) and so we are only interested in variables with <em>“-mean()-”</em> or <em>“-std()-”</em> in the name. An example of one is <code>tBodyAcc-mean()-Z</code>. The full list is found below. The original values of the variables were normalized to be [-1,1] and so are unitless.</p>
+<p>While other values were calculated for the above variables, for our analysis we are concerned only with the <code>mean()</code> and <code>std()</code> (standard deviation) and so we are only interested in variables with <em>“-mean()-”</em> or <em>“-std()-”</em> in the name. An example of one is <code>tBodyAcc-mean()-Z</code>. The full list is found below. The original values of the variables were normalized to be [-1,1] and so are unit less.</p>
 <p>Within the <em>TinyData.txt</em> file the following variables names are used.</p>
 <ol style="list-style-type: decimal">
 <li><code>Subject</code></li>
 </ol>
 <ul>
-<li>This takes values 1-30 and representes the experiment subject (person).</li>
+<li>This takes values 1-30 and represents the experiment subject (person).</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
 <li><code>Activity_Label</code> represents the activity the subject was performing while the data were recorded. It can takes the following values in the <em>TidyData</em>:</li>
@@ -113,9 +113,9 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </ol>
 </blockquote>
 <ul>
-<li>Please note that in the original data the activities are coded using the numerical values in the above table. The <em>run_analsyis.R</em> file recodes those values using the text values in the above table.</li>
+<li>Please note that in the original data the activities are coded using the numerical values in the above table. The <em>run_analsyis.R</em> file re-codes those values using the text values in the above table.</li>
 </ul>
-<p>The other 66 variables represent the by <code>Subject</code> by <code>Activity_Label</code> means. These are also the orignal names for these variables. The original names are retained since adding “Mean of” would have been tedious and redundant since all values in the tidy data are means and this is also explained in the <strong>README</strong>. Since the original data was normalized to be [-1,1] the means fall within the same range (and also have no units).</p>
+<p>The other 66 variables represent the by <code>Subject</code> by <code>Activity_Label</code> means. These are also the original names for these variables. The original names are retained since adding “Mean of” would have been tedious and redundant since all values in the tidy data are means and this is also explained in the <strong>README</strong>. Since the original data was normalized to be [-1,1] the means fall within the same range (and also have no units).</p>
 <ol start="3" style="list-style-type: decimal">
 <li>“tBodyAcc-mean()-X”</li>
 <li>“tBodyAcc-mean()-Y”</li>
