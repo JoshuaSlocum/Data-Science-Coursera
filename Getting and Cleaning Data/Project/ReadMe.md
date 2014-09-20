@@ -1,9 +1,4 @@
----
-title: "README"
-output: 
-  html_document:
-    keep_md: true
----
+# README
 
 ### Introduction
 This analysis assumes that you have already obtained the UCI HAR Dataset and are familiar with the information contained in its assocaited **README** file regarding the format of the study and original data. If you do not have it, you can obtain it [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). 

@@ -1,9 +1,4 @@
----
-title: "Code Book"
-output: 
-  html_document:
-    keep_md: true
----
+# Code Book
 
 This information is taken from the *features_info.txt* file in the *UCI HAR Dataset* folder mentioned in the **README**. It does not represent all the information found there, only that which is relevant to the analysis discused in the **README** that is performed by the *run_analysis.R* file.
 
