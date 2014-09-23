@@ -1,0 +1,52 @@
+---
+title: "Analysis of the Health and Economic Impact of US Weather Events"
+output: 
+  html_document:
+    keep_MD: true
+---
+
+# Synopsis
+Severe weather poses a major concern for both economic and public health outcomes. Different types of events have different consequences, and require different methods of damage prevention, mitigation and recovery. Thus, analyzing the historical outcomes of different types weather events can help us assess what steps need to be taken to prepare for different severe weather events.
+
+To conduct this analsyis we will use data from the US NOAA storm database. All code to conduct the analysis is provided in this document.
+
+
+# Data Processing
+
+## Data Source Background Info
+The data used in this analysis comes from the US NOAA storm database which contains data on events from 1950 to November 2011. Earlier years tend to be a bit thin, but later years can be considered to be more complete. The database tracks several characteristics of major storms and weather events including: fatalities, injuries, property damage, location, and time of occurrence. 
+
+The data can be found [here](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) (47Mb).
+
+For more information and source documentation please see the:
+
+* National Weather Service [Storm Data Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+* National Climatic Data Center Storm Events [FAQ](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf)
+
+## Loading the Data
+This section will describe how to download the data directly into the working directory and then load it into the workspace as a data frame.
+
+1. Download the Data and save it as `StormData.csv.bz2`.
+```{r dl, echo=TRUE,cache=TRUE}
+download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2","StormData.csv.bz2",method="curl")
+```
+
+2. Load the Data into the workspace as a data frame called `StormData`.
+```{r load, echo=TRUE,cache=TRUE}
+StormData <- read.csv("StormData.csv.bz2")
+```
+
+
+## Cleaning the Data
+
+
+
+
+
+
+
+
+
+
+# Results
+
